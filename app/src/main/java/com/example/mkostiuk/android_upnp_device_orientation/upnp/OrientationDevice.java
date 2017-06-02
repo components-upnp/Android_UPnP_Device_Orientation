@@ -48,7 +48,6 @@ public class OrientationDevice {
                 new DeviceIdentity(udn),
                 type,
                 details,
-
                 service
         );
     }

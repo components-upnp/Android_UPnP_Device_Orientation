@@ -15,7 +15,7 @@ import java.beans.PropertyChangeSupport;
 
 @UpnpService(
         serviceType = @UpnpServiceType(value = "OrientationService"),
-        serviceId = @UpnpServiceId("OrienationService")
+        serviceId = @UpnpServiceId("OrientationService")
 )
 public class OrientationController {
 
@@ -33,7 +33,7 @@ public class OrientationController {
     private String commande = "";
 
     @UpnpAction(name = "SendCommande")
-    public void sendCommande(@UpnpInputArgument(name = "NewCommande") String c) {
+    public void sendCommande(@UpnpInputArgument(name = "Commande") String c) {
         commande = c;
         getPropertyChangeSupport().firePropertyChange("Commande", "", commande);
     }

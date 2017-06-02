@@ -20,7 +20,7 @@ import javax.xml.transform.stream.StreamResult;
 
 public class GenerateurXml {
 
-    public String getDocXml(String udn, String commande) throws ParserConfigurationException, TransformerException {
+    public String getDocXml(String udn, String x, String y, String z) throws ParserConfigurationException, TransformerException {
         String namespace = "/";
         Document doc;
         DocumentBuilderFactory db = DocumentBuilderFactory.newInstance();
@@ -37,7 +37,18 @@ public class GenerateurXml {
 
         Element c = doc.createElementNS(namespace, "Angle");
         root.appendChild(c);
-        c.appendChild(doc.createTextNode(commande));
+
+        Element xNode = doc.createElementNS(namespace, "X");
+        c.appendChild(xNode);
+        xNode.appendChild(doc.createTextNode(x));
+
+        Element yNode = doc.createElementNS(namespace, "Y");
+        c.appendChild(yNode);
+        yNode.appendChild(doc.createTextNode(y));
+
+        Element zNode = doc.createElementNS(namespace, "Z");
+        c.appendChild(zNode);
+        zNode.appendChild(doc.createTextNode(z));
 
 
         DOMSource source = new DOMSource(doc);
