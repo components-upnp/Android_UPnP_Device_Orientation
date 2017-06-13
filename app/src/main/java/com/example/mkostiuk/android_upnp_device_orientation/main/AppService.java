@@ -90,7 +90,7 @@ public class AppService extends Service {
             public void run() {
                 sensorManager.registerListener(new SensorListener(service.getOrientationService(), service.getUdn().toString()),
                         sensor,
-                        100000);
+                        500000);
             }
         }, 20000);
 

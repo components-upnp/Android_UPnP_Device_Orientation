@@ -13,6 +13,8 @@ import org.fourthline.cling.model.meta.LocalService;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
+import xdroid.toaster.Toaster;
+
 /**
  * Created by mkostiuk on 01/06/2017.
  */
@@ -33,6 +35,13 @@ public class SensorListener implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         try {
+
+            String x = String.valueOf(event.values[0]);
+            String y = String.valueOf(event.values[1]);
+            String z = String.valueOf(event.values[2]);
+
+            System.out.println("X : " +x+ "  Y :" + y + " Z : " +z);
+
             String commande = gen.getDocXml( udn,
                     String.valueOf(event.values[0]),
                     String.valueOf(event.values[1]),
