@@ -14,6 +14,8 @@ Il faut donc installer l'apk sur le terminal, vérifier d'avoir autorisé les so
 
 Après démarrage de l'application, il est possible d'ajouter le composant sur wcomp en suivant la méthode décrite sur le wiki oppocampus.
 
+L'application étant un service Android, elle ne présente aucune interface graphique.
+
 <strong>Spécification UPnP : </strong>
 
 Ce composant offre le service OrientationService dont voici la description :
