@@ -36,15 +36,15 @@ public class SensorListener implements SensorEventListener {
     public void onSensorChanged(SensorEvent event) {
         try {
 
-            String x = String.valueOf(event.values[0]);
-            String y = String.valueOf(event.values[1]);
+            String x = String.valueOf(event.values[1]);
+            String y = String.valueOf(event.values[0]);
             String z = String.valueOf(event.values[2]);
 
             System.out.println("X : " +x+ "  Y :" + y + " Z : " +z);
 
             String commande = gen.getDocXml( udn,
-                    String.valueOf(event.values[0]),
                     String.valueOf(event.values[1]),
+                    String.valueOf(event.values[0]),
                     String.valueOf(event.values[2]));
 
         orientationService.getManager().getImplementation()
